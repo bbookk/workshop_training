@@ -1,0 +1,13 @@
+<div class="register-form">
+  <p class="texto">Prompt Pay Register</p>
+  <div class="Registro">
+    <form>
+      <input type="text" required placeholder="Type" name="type" [(ngModel)]="type" name="type">
+      <input type="text" required placeholder="Phone Number" name="phone" [(ngModel)]="phone" name="phone">
+      <input type="text" required placeholder="Account ID" name="idCard" [(ngModel)]="idCard" name="idCard">
+      <input type="text" required placeholder="Account Name" name="accountNum" [(ngModel)]="accountNum" name="accountNum">
+      <input type="submit" value="Register" (click)="sendRequest()">
+    </form>
+  </div>
+</div>  
+<!-- <button value="Test" (click)="passValue()">TEST -->
