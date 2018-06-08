@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-
+import { RequestMethod, RequestOptions } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RegisterService {
@@ -8,7 +9,7 @@ export class RegisterService {
     }
 
     responseData(reg_data) {
-        let url = "http://alws-orcsoft.mockable.io/InterBank/any-id";
+        let url = "http://localhost:8090/orcsoft/swagger-ui.html#!/call-rest-api-controller/postRegistPromptPay";
         let body = JSON.stringify({
             IDType: reg_data.IDType,
             IDValue: reg_data.IDValue,
@@ -16,11 +17,10 @@ export class RegisterService {
             AccountID: reg_data.AccountID,
             AccountName: reg_data.AccountName
         });
-        return this.http.post(url, body)
-    }
 
-    getData() {
-        return this.http.get('http://192.168.9.154:8090/interbank/any-id/?type=mobile&value=0819248388').toPromise();
-    }
-
+        return this.http.post(url, body,  {
+            headers:new HttpHeaders()
+            .set('Content-Type','application/json')
+            });
+        }
 }

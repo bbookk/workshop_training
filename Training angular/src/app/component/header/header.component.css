@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins');
+.navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav{
+    font-family: 'Poppins', sans-serif;
+    background-color: #003300;
+    /* color:white; */
+    font-size: 20px;
+}
+
+#Nav a{
+    color: #f2f2f2;
+    text-decoration:none;
+}
+
+#Nav a:hover {
+   color: gray;
+}

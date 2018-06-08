@@ -44,18 +44,15 @@ export class RegisterComponent implements OnInit {
   }
 
   getData() {
-    this.registerService.getData().then(res => {
-      // console.log(res)
-      this.passValue(res)
+    this.registerService.responseData(this.reg_data).subscribe(res => {
+      console.log(res)
+      // this.passValue(res)
     })
-    // this.registerService.responseData(this.reg_data).subscribe(res => {
-    //   console.log(res)
-    // })
   }
 
-  passValue(res) {
-    console.log(res)
-    // this._var.name = this.type;
-    // this.router.navigate(['/store']);
+  passValue() {
+    // console.log(res)
+    this._var.name = this.type;
+    this.router.navigate(['/store']);
   }
 }

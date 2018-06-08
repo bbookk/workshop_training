@@ -18,12 +18,13 @@ import { TransferAccountComponent } from './component/transfer-account/transfer-
 import { PromptpayComponent } from './component/promptpay/promptpay.component';
 import { DeletePromptpayComponent } from './component/delete-promptpay/delete-promptpay.component';
 import { LoginService } from './services/login.service';
+import { HeaderComponent } from './component/header/header.component';
 
 const APP_ROUTE: Routes = [
   { path: '', component: LoginComponent },
   { path: 'store', component: StoreComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'acountDetail', component: AccountDetailComponent },
+  { path: 'accountDetail', component: AccountDetailComponent },
   { path: 'transfer', component: TransferComponent },
   { path: 'transferByAccountNumber', component: TransferAccountComponent },
   { path: 'transferPromptpay', component: TransferPromptpayComponent },
@@ -43,6 +44,7 @@ const APP_ROUTE: Routes = [
     TransferAccountComponent,
     PromptpayComponent,
     DeletePromptpayComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
