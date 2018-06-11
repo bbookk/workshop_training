@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   public phone: string;
   public idCardValue: string;
   public accountName: string;
+  public bankCode: string;
 
   public typeValue: string = 'mobile';
 
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit {
   public reg_data = {
     IDType: "",
     IDValue: "",
-    BankCode: "002",
+    BankCode: "",
     AccountID: "",
     AccountName: ""
   }
@@ -40,9 +41,10 @@ export class RegisterComponent implements OnInit {
   sendRequest() {
     this.reg_data.IDType = this.type;
     this.reg_data.IDValue = this.phone;
+    this.reg_data.BankCode = this.bankCode;
     this.reg_data.AccountID = this.idCardValue;
     this.reg_data.AccountName = this.accountName;
-    console.log(this.reg_data.IDType)
+    console.log(this.reg_data)
     // this.getData();
   }
 
