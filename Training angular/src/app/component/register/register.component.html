@@ -1,14 +1,38 @@
 <app-header></app-header>
-<div class="register-form">
-  <p class="texto">Prompt Pay Register</p>
-  <div class="Registro">
-    <form>
-      <input type="text" required placeholder="Type" name="type" [(ngModel)]="type" name="type">
-      <input type="text" required placeholder="Phone Number" name="phone" [(ngModel)]="phone" name="phone">
-      <input type="text" required placeholder="Account ID" name="idCard" [(ngModel)]="idCard" name="idCard">
-      <input type="text" required placeholder="Account Name" name="accountNum" [(ngModel)]="accountNum" name="accountNum">
-      <input type="submit" value="Register" (click)="sendRequest()">
+<div class="title">Prompt Pay Register</div>
+
+<body class="align">
+  <div class="grid">
+    <!-- <img src="http://www.old.nrru.ac.th/studentloan/UserFiles/Image/ibank.jpg"> -->
+
+    <form class="form login">
+      <div class="form__field">
+        <label class="checkbox-inline">
+          <input type="checkbox" name="type" value="mobile" [checked]="type=== 'mobile'" (change)="type = $event.target.checked ? 'mobile' : 'id card'" checked>Mobile</label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="type" value="idCard" [checked]="type=== 'id card'" (change)="type = $event.target.checked ? 'id card' : 'mobile'">ID Card</label>
+      </div>
+      <div class="form__field">
+        <input id="phone" type="text" name="phone" class="form__input" placeholder="Phone Number" [(ngModel)]="phone">
+      </div>
+
+      <div class="form__field">
+        <input id="idCardValue" type="text" name="idCardValue" class="form__input" placeholder="ID Card" [(ngModel)]="idCardValue">
+      </div>
+
+      <div class="form__field">
+        <input id="bankCode" type="text" name="bankCode" class="form__input" placeholder="Bank Code" [(ngModel)]="bankCode">
+      </div>
+
+      <div class="form__field">
+        <input id="accountName" type="text" name="accountName" class="form__input" placeholder="Account Name" [(ngModel)]="accountName"
+          required>
+      </div>
+
+      <div class="form__field">
+        <input type="submit" value="Sign In" (click)="sendRequest()">
+      </div>
+
     </form>
   </div>
-</div>  
-<!-- <button value="Test" (click)="passValue()">TEST -->
+</body>

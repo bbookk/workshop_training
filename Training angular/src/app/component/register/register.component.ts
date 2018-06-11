@@ -14,10 +14,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
-  public type: string;
+  public type: string = 'mobile';
   public phone: string;
-  public idCard: string;
-  public accountNum: string;
+  public idCardValue: string;
+  public accountName: string;
+
+  public typeValue: string = 'mobile';
 
 
   public reg_data = {
@@ -38,9 +40,10 @@ export class RegisterComponent implements OnInit {
   sendRequest() {
     this.reg_data.IDType = this.type;
     this.reg_data.IDValue = this.phone;
-    this.reg_data.AccountID = this.idCard;
-    this.reg_data.AccountName = this.accountNum;
-    this.getData();
+    this.reg_data.AccountID = this.idCardValue;
+    this.reg_data.AccountName = this.accountName;
+    console.log(this.reg_data.IDType)
+    // this.getData();
   }
 
   getData() {
