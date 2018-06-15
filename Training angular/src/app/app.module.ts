@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { StoreComponent } from './component/store/store.component';
@@ -19,11 +20,13 @@ import { PromptpayComponent } from './component/promptpay/promptpay.component';
 import { DeletePromptpayComponent } from './component/delete-promptpay/delete-promptpay.component';
 import { LoginService } from './services/login.service';
 import { HeaderComponent } from './component/header/header.component';
+import { PromptPayService } from './services/promptPay.service';
 
 const APP_ROUTE: Routes = [
   { path: '', component: LoginComponent },
   { path: 'store', component: StoreComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'promptpay', component: PromptpayComponent },
   { path: 'accountDetail', component: AccountDetailComponent },
   { path: 'transfer', component: TransferComponent },
   { path: 'transferByAccountNumber', component: TransferAccountComponent },
@@ -51,11 +54,13 @@ const APP_ROUTE: Routes = [
     FormsModule,
     RouterModule.forRoot(APP_ROUTE),
     HttpClientModule,//new for ang4
+    FlashMessagesModule.forRoot(),
   ],
   providers:
     [VariableComponent,
       RegisterService,
-    LoginService],
+      LoginService,
+      PromptPayService],
   bootstrap: [AppComponent],
   // exports: [RouterModule]
 })

@@ -9,7 +9,7 @@ export class RegisterService {
     }
 
     responseData(reg_data) {
-        let url = "http://localhost:8090/orcsoft/swagger-ui.html#!/call-rest-api-controller/postRegistPromptPay";
+        let url = "http://localhost:8090/orcsoft/v1/callPromptApi/postRegistPromptPay";
         let body = JSON.stringify({
             IDType: reg_data.IDType,
             IDValue: reg_data.IDValue,

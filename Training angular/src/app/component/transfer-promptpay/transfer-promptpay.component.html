@@ -1,3 +1,48 @@
-<p>
-  transfer-promptpay works!
-</p>
+<app-header></app-header>
+<div class="title">Transfer By Prompt Pay</div>
+
+<body class="align">
+  <div class="grid" *ngIf="!show">
+    <form class="form login">
+      <div class="form__field">
+        <input id="from" type="number" name="from" class="form__input" placeholder="From" [(ngModel)]="from" required>
+      </div>
+
+      <div class="form__field">
+        <input id="to" type="number" name="to" class="form__input" placeholder="to" [(ngModel)]="to" required>
+      </div>
+
+      <div class="form__field">
+        <input id="amount" type="number" name="amount" class="form__input" placeholder="Amount" [(ngModel)]="amount">
+      </div>
+
+      <div class="form__field">
+        <input type="submit" value="Next" (click)="getDataTransfer()">
+      </div>
+
+    </form>
+  </div>
+
+  <div class="grid" *ngIf="show">
+    <form class="form login">
+      <div class="detail_form">
+        <label>From : </label>
+        <span>{{from}}</span>
+      </div>
+
+      <div class="detail_form">
+        <label>To : </label>
+        <span>{{to}}</span>
+      </div>
+
+      <div class="detail_form">
+        <label>Amount : </label>
+        <span>{{amount}}</span>
+      </div>
+
+      <div class="form__field">
+        <input type="submit" value="Confirm">
+      </div>
+    </form>
+  </div>
+</body>

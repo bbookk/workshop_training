@@ -30,6 +30,7 @@ button {
   font-size: 36px;
   border: 10px solid #003300;
   box-shadow: 3px 3px #888888;
+  margin-top: 50px;
 }
 
 button:hover{
@@ -40,4 +41,8 @@ button:hover{
   height: 275px;
   border: 10px solid #003300;
   box-shadow: 3px 3px #888888;
+}
+
+.center-div {
+  text-align: center;
 }

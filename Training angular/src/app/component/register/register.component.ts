@@ -5,6 +5,7 @@ import { VariableComponent } from './../../variable.compoent'
 import { RegisterService } from '../../services/register.service';
 import { Headers, RequestOptions, RequestMethod, ResponseContentType } from '@angular/http';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { headersToString } from 'selenium-webdriver/http';
 
 
 @Component({
@@ -15,8 +16,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
 
   public type: string = 'mobile';
-  public phone: string;
-  public idCardValue: string;
+  // public phone: string;
+  public idValue: string;
   public accountName: string;
   public bankCode: string;
 
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
     IDType: "",
     IDValue: "",
     BankCode: "",
-    AccountID: "",
+    AccountID: "000-0-111111-0",
     AccountName: ""
   }
 
@@ -40,17 +41,16 @@ export class RegisterComponent implements OnInit {
 
   sendRequest() {
     this.reg_data.IDType = this.type;
-    this.reg_data.IDValue = this.phone;
+    this.reg_data.IDValue = this.idValue;
     this.reg_data.BankCode = this.bankCode;
-    this.reg_data.AccountID = this.idCardValue;
     this.reg_data.AccountName = this.accountName;
     console.log(this.reg_data)
-    // this.getData();
+    this.getData();
   }
 
   getData() {
     this.registerService.responseData(this.reg_data).subscribe(res => {
-      console.log(res)
+      console.log('res ',res)
       // this.passValue(res)
     })
   }

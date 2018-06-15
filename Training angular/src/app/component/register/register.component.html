@@ -7,17 +7,19 @@
 
     <form class="form login">
       <div class="form__field">
-        <label class="checkbox-inline">
-          <input type="checkbox" name="type" value="mobile" [checked]="type=== 'mobile'" (change)="type = $event.target.checked ? 'mobile' : 'id card'" checked>Mobile</label>
-        <label class="checkbox-inline">
-          <input type="checkbox" name="type" value="idCard" [checked]="type=== 'id card'" (change)="type = $event.target.checked ? 'id card' : 'mobile'">ID Card</label>
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" value="mobile" name="type" [(ngModel)]="type"> mobile
+        </label>
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" value="idCard" name="type" [(ngModel)]="type" checked> ID Card
+        </label>
       </div>
-      <div class="form__field">
-        <input id="phone" type="text" name="phone" class="form__input" placeholder="Phone Number" [(ngModel)]="phone">
+      <div class="form__field" *ngIf="type === 'mobile'">
+        <input id="idValue" type="text" name="idValue" class="form__input" placeholder="Phone Number" [(ngModel)]="idValue">
       </div>
 
-      <div class="form__field">
-        <input id="idCardValue" type="text" name="idCardValue" class="form__input" placeholder="ID Card" [(ngModel)]="idCardValue">
+      <div class="form__field" *ngIf="type === 'idCard'">
+        <input id="idValue" type="text" name="idValue" class="form__input" placeholder="ID Card" [(ngModel)]="idValue">
       </div>
 
       <div class="form__field">
